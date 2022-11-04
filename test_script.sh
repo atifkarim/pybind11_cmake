@@ -1,18 +1,9 @@
 echo "Hi I am Atif"
 cd ..
-pwd
-ls *
 mkdir Test
-cd Test
-echo "From Test"
-echo "hhhhhhhhhhhhhhhhhhh"
-$CI_PROJECT_DIR
-pwd
-ls *
+echo "2 time tree done"
+tree
 cd ..
-rm -rf Test
-ls *
-cd pybind11_cmake
-echo "From git repo"
-pwd
-ls *
+cd ..
+echo "3 time tree done"
+tree

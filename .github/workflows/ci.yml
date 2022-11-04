@@ -19,9 +19,8 @@ jobs:
       run: |
           echo "PWD"
           pwd
-          echo "ls"
-          ls *
+          sudo apt-get install tree
+          tree
+          echo "1 time tree done"
           chmod +x test_script.sh
           ./test_script.sh
-          echo "kiiiiiiiiiiiikkkk"
-          $CI_PROJECT_DIR
