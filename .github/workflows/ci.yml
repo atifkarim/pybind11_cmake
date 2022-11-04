@@ -21,4 +21,5 @@ jobs:
           pwd
           echo "ls"
           ls
+          chmod +x test_script.sh
           ./test_script.sh
