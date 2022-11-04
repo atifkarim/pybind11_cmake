@@ -1,16 +1,16 @@
 echo "Hi I am Atif"
 cd ..
 pwd
-ls
+ls *
 mkdir Test
 cd Test
 echo "From Test"
 pwd
-ls
+ls *
 cd ..
 rm -rf Test
-ls
+ls *
 cd pybind11_cmake
 echo "From git repo"
 pwd
-ls
+ls *
