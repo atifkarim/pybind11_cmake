@@ -20,6 +20,6 @@ jobs:
           echo "PWD"
           pwd
           echo "ls"
-          ls
+          ls *
           chmod +x test_script.sh
           ./test_script.sh
