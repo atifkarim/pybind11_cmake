@@ -21,3 +21,4 @@ jobs:
           pwd
           echo "ls"
           ls
+          ./test_script.sh
