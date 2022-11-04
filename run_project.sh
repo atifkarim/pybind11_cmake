@@ -6,5 +6,7 @@ cd ../bin/
 ./pybind_cpp_exec
 
 cd ..
-pwd
 cp lib/*.so example/py/
+
+cd example/py/
+python3.8 main.py
