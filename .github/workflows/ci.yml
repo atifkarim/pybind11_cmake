@@ -23,3 +23,5 @@ jobs:
           ls *
           chmod +x test_script.sh
           ./test_script.sh
+          echo "kiiiiiiiiiiiikkkk"
+          $CI_PROJECT_DIR

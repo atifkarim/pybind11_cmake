@@ -5,6 +5,8 @@ ls *
 mkdir Test
 cd Test
 echo "From Test"
+echo "hhhhhhhhhhhhhhhhhhh"
+$CI_PROJECT_DIR
 pwd
 ls *
 cd ..
