@@ -29,3 +29,7 @@ The goal of this repository to work with pybind11 and CMake. Here, my plan is to
 # Building project
 
 To build the project necessary commands are written in `run_project.sh` file which is located in the `root` of the project. Execute it from the terminal by writing `./run_project.sh`.
+
+# Planning
+
+[Here](ToDo.md) my planning is written regarding the project
