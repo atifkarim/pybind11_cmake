@@ -3,6 +3,9 @@ Pybind11 & CMake
 
 [![CI](https://github.com/atifkarim/pybind11_cmake/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/atifkarim/pybind11_cmake/actions/workflows/ci.yml)
 
+[![Documentation Status](https://readthedocs.org/projects/pybind11-cmake/badge/?version=latest)](https://pybind11-cmake.readthedocs.io/en/latest/?badge=latest)
+
+
 The goal of this repository to work with pybind11 and CMake. Here, my plan is to introduce advanced C++ binding.
 
 # Cloning Repositories

@@ -1,0 +1,38 @@
+site_name: Image Processor
+
+nav:
+    - Overview:
+        - 'Topics': index.md
+
+theme:
+    name: material
+    # name: readthedocs
+    favicon: 'images/site_logo.png'
+    logo: 'images/site_logo.png'
+    palette:
+        scheme: slate
+        primary: brown
+
+repo_name: 'Pybind11 C++ CMake'
+repo_url: 'https://github.com/atifkarim/pybind11_cmake'
+
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - admonition
