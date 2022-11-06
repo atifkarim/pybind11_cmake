@@ -21,6 +21,7 @@ This repository will be a collection of multiple learning fields where my desire
 
 1. Use `Sphinx` as documentation tool
 1. Also provide `Doxygen` style comment in the header file of `C++`
+1. Host the document in `readthedocs`
 
 # Delivery
 
