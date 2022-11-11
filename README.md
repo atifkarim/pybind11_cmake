@@ -39,3 +39,15 @@ This [RTD Site](https://pybind11-cmake.readthedocs.io/en/latest/) is used to hos
 # Planning
 
 [Here](ToDo.md) my planning is written regarding the project
+
+# Building project issue
+
+1. Sometimes CMAKE faces issue while building project regarding finding appropriate python package. See [this](https://github.com/pybind/pybind11/issues/2154). Possible solution:
+
+    ```sh
+    cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3.8
+    ```
+    or,
+    ```sh
+    cmake .. -DPYTHON_EXECUTABLE=$(which python)
+    ```
