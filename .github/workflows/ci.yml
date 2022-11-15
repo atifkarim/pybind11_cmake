@@ -17,6 +17,8 @@ jobs:
 
     - name: Inspection
       run: |
+          pwd
+          ls
           git clone https://github.com/pybind/pybind11.git ../forked_repo/pybind11
           chmod +x run_project.sh
           ./run_project.sh
