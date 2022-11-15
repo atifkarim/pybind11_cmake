@@ -19,6 +19,7 @@ jobs:
       run: |
           pwd
           ls
+          echo $CI_PROJECT_DIR
           git clone https://github.com/pybind/pybind11.git ../forked_repo/pybind11
           chmod +x run_project.sh
           ./run_project.sh
