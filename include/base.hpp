@@ -3,6 +3,7 @@
 
 class Image_Core{
     public:
+        Image_Core () = delete;
         Image_Core(std::string name_)
                    : name{name_}
                   {
