@@ -15,12 +15,16 @@ jobs:
     - name: Checkout Master
       uses: actions/checkout@v3
 
-    - name: Inspection
+    - name: Build
       run: |
           git clone https://github.com/pybind/pybind11.git ../forked_repo/pybind11
           mkdir build && cd build
           cmake .. -DPYTHON_EXECUTABLE=$(which python) && make
           cd ../bin/
+
+    - name: Execute
+      run: |
+          cd bin
           ./pybind_cpp_exec
           cd ..
           cp lib/*.so example/py/
