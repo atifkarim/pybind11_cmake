@@ -9,6 +9,9 @@ class Image_Core{
                     std::cout << "Image core gets " << name << std::endl;
                   }
 
+        // destructor is called
+        virtual ~Image_Core(){}
+
         void Image_Size(uint32_t size_);
         void Print_Status();
 
