@@ -10,7 +10,8 @@ project(pybind11_cmake)
 set(MAIN_TARGET_NAME ${PROJECT_NAME})
 
 # C++ shared library
-add_library(${MAIN_TARGET_NAME}_lib SHARED ${${PROJECT_NAME}_SOURCE_DIR}/src/base.cpp)
+add_library(${MAIN_TARGET_NAME}_lib SHARED ${${PROJECT_NAME}_SOURCE_DIR}/src/base.cpp
+                                           ${${PROJECT_NAME}_SOURCE_DIR}/src/child.cpp)
 
 # Targetted directory for the target ${MAIN_TARGET_NAME}_lib
 target_include_directories(${MAIN_TARGET_NAME}_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
@@ -40,6 +41,7 @@ set(PYBIND_TARGET_NAME pybind_cpp_module)
 
 # Source file to bind pybind11
 pybind11_add_module(${PYBIND_TARGET_NAME} ${PROJECT_SOURCE_DIR}/src/base.cpp
+                                          ${PROJECT_SOURCE_DIR}/src/child.cpp
                                           ${PROJECT_SOURCE_DIR}/src/pybinded_file/py_binded.cpp)
 
 # Target directory for pybinded module

@@ -26,8 +26,3 @@ class Image_Process : public Image_Core
 		std::string user_name_;
 		std::string current_time_;
 };
-
-void Image_Process::Show_Date()
-{
-	std::cout << "Current Time: " << current_time_ << std::endl;
-}
