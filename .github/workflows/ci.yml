@@ -18,5 +18,13 @@ jobs:
     - name: Inspection
       run: |
           git clone https://github.com/pybind/pybind11.git ../forked_repo/pybind11
-          chmod +x run_project.sh
-          ./run_project.sh
+          rm -rf build/ bin/ lib/
+          rm example/py/*.so
+          mkdir build && cd build
+          cmake .. -DPYTHON_EXECUTABLE=$(which python) && make
+          cd ../bin/
+          ./pybind_cpp_exec
+          cd ..
+          cp lib/*.so example/py/
+          cd example/py/
+          python3 main.py
