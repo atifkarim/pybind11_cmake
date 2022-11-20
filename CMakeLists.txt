@@ -40,7 +40,7 @@ set(PYBIND_TARGET_NAME pybind_cpp_module)
 
 # Source file to bind pybind11
 pybind11_add_module(${PYBIND_TARGET_NAME} ${PROJECT_SOURCE_DIR}/src/base.cpp
-                                          ${PROJECT_SOURCE_DIR}/src/py_binded.cpp)
+                                          ${PROJECT_SOURCE_DIR}/src/pybinded_file/py_binded.cpp)
 
 # Target directory for pybinded module
 target_include_directories(${PYBIND_TARGET_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
