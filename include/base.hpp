@@ -2,11 +2,11 @@
 #include <string>
 
 template <typename T1 = std::string, typename T2 = int>
-class Image_Base{
+class Image_Base_Template{
 public:
 
-	Image_Base(T1 image_id_ = "No Name"): image_base_id{image_id_}{}
-	virtual ~Image_Base() {}
+	Image_Base_Template(T1 image_id_ = "No Name"): image_base_id{image_id_}{}
+	virtual ~Image_Base_Template() {}
 	virtual int weight_kg(T2 weight) const = 0;
 
 protected:
