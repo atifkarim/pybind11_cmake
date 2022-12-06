@@ -9,3 +9,6 @@ image_core_obj.Print_Status()
 
 image_process_obj = pybind_cpp_module.Image_Process("Cow", "Heroku")
 image_process_obj.Show_Date()
+point = [1,2,3,5]
+image_process_obj.Image_Coordinate(point)
+image_process_obj.Print_Image_Coordinate()
