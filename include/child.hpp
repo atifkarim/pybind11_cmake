@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <chrono>
 #include <sstream>
+#include <array>
 
 class Image_Process : public Image_Core
 {
@@ -19,10 +20,13 @@ class Image_Process : public Image_Core
 		               }
 
 		void Show_Date();
+		std::array<uint32_t, 4> Image_Coordinate(uint32_t * coordinate_point);
+		void Print_Image_Coordinate() const;
 
 		virtual ~Image_Process(){}
 
 	private:
 		std::string user_name_;
 		std::string current_time_;
+		std::array<uint32_t, 4> point;
 };
