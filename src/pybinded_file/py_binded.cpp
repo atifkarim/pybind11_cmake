@@ -1,6 +1,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/iostream.h>
 #include "child.hpp"
+#include <pybind11/numpy.h>
 
 namespace py = pybind11;
 
@@ -45,7 +46,11 @@ PYBIND11_MODULE(pybind_cpp_module, m)
 	py::class_<Image_Process, Image_Core> Image_Process(m, "Image_Process");
 	Image_Process
 	    .def(py::init<std::string, std::string>())
-	    .def("Show_Date", &Image_Process::Show_Date);
+	    .def("Show_Date", &Image_Process::Show_Date)
+	    .def("Image_Coordinate", [](class Image_Process &m, py::array_t<uint32_t> buffer){
+	                                py::buffer_info info = buffer.request();
+	                                m.Image_Coordinate(static_cast<uint32_t *>(info.ptr));})
+	    .def("Print_Image_Coordinate", &Image_Process::Print_Image_Coordinate);
 
 	Pybind_Image_Base<std::string, int>(m, "std::string", "int");
 }
