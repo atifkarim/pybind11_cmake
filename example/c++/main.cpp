@@ -8,5 +8,8 @@ int main()
 
     Image_Process image_process("Quala", "Picaso");
     image_process.Show_Date();
+    uint32_t point[4] = {1,5,6,8};
+    image_process.Image_Coordinate(point);
+    image_process.Print_Image_Coordinate();
     return 0;
 }
