@@ -50,7 +50,15 @@ PYBIND11_MODULE(pybind_cpp_module, m)
 	    .def("Image_Coordinate", [](class Image_Process &m, py::array_t<uint32_t> buffer){
 	                                py::buffer_info info = buffer.request();
 	                                m.Image_Coordinate(static_cast<uint32_t *>(info.ptr));})
-	    .def("Print_Image_Coordinate", &Image_Process::Print_Image_Coordinate);
+	    .def("Print_Image_Coordinate", &Image_Process::Print_Image_Coordinate)
+	    .def("Check_Enum", py::overload_cast<Image_Process::Sample_Enum>(&Image_Process::Check_Enum))
+	    .def("Check_Enum", py::overload_cast<>(&Image_Process::Check_Enum, py::const_));
+
+	py::enum_<Image_Process::Sample_Enum>(Image_Process, "Sample_Enum")
+	    .value("A_0", Image_Process::Sample_Enum::A_0)
+	    .value("A_1", Image_Process::Sample_Enum::A_1)
+	    .value("A_2", Image_Process::Sample_Enum::A_2)
+	    .export_values();
 
 	Pybind_Image_Base<std::string, int>(m, "std::string", "int");
 }
