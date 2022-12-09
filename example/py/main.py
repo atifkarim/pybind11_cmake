@@ -20,3 +20,8 @@ image_process_obj.Print_Image_Coordinate()
 image_process_obj.Check_Enum(pybind_cpp_module.Image_Process.Sample_Enum.__members__["A_0"])
 print("Value of enum return: ", image_process_obj.Check_Enum().value)
 print("Name of enum return : ", image_process_obj.Check_Enum().name)
+
+image_container_object = pybind_cpp_module.Input_Container()
+image_container_object.image_file_num = [2,5,8,7]
+image_process_obj.Check_Image_File_Num(image_container_object)
+print("Res: ", image_process_obj.Check_Image_File_Num())

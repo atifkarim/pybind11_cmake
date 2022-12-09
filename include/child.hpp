@@ -3,6 +3,7 @@
 #include <chrono>
 #include <sstream>
 #include <array>
+#include <vector>
 
 class Image_Process : public Image_Core
 {
@@ -26,6 +27,11 @@ class Image_Process : public Image_Core
 			A_2 = 2,
 		};
 
+		struct Input_Container
+		{
+			std::vector<uint32_t> image_file_num;
+		};
+
 		void Show_Date();
 		std::array<uint32_t, 4> Image_Coordinate(uint32_t * coordinate_point);
 		void Print_Image_Coordinate() const;
@@ -35,6 +41,9 @@ class Image_Process : public Image_Core
 
 		// Read back Enum
 		Sample_Enum Check_Enum() const;
+
+		void Check_Image_File_Num(Input_Container &input_container);
+		uint32_t Check_Image_File_Num();
 
 		virtual ~Image_Process(){}
 

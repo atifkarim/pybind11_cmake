@@ -17,5 +17,10 @@ int main()
     image_process.Check_Enum(sample_enum_value);
     std::cout << "Fetched Enum Value: " << static_cast<uint32_t>(image_process.Check_Enum()) << std::endl;
 
+    Image_Process::Input_Container input_container;
+    input_container.image_file_num = {1,5,6,8};
+    image_process.Check_Image_File_Num(input_container);
+    std::cout << "Res: " << image_process.Check_Image_File_Num() << std::endl;
+
     return 0;
 }

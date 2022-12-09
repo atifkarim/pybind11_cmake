@@ -41,3 +41,22 @@ Image_Process::Sample_Enum Image_Process::Check_Enum() const
 {
 	return static_cast<Image_Process::Sample_Enum>(enum_dummy_value);
 }
+
+void Image_Process::Check_Image_File_Num(Input_Container &input_container)
+{
+	if(input_container.image_file_num.size() == 0)
+		throw std::runtime_error("No file is inserted");
+	else
+	{
+		std::cout << "Image file name is" << std::endl;
+		for (auto &x: input_container.image_file_num )
+			std::cout << x << " ";
+		std::cout << std::endl;
+	}
+
+}
+
+uint32_t Image_Process::Check_Image_File_Num()
+{
+	return 2;
+}

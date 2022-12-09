@@ -2,6 +2,8 @@
 #include <pybind11/iostream.h>
 #include "child.hpp"
 #include <pybind11/numpy.h>
+#include <pybind11/stl.h>
+#include <pybind11/complex.h>
 
 namespace py = pybind11;
 
@@ -52,13 +54,21 @@ PYBIND11_MODULE(pybind_cpp_module, m)
 	                                m.Image_Coordinate(static_cast<uint32_t *>(info.ptr));})
 	    .def("Print_Image_Coordinate", &Image_Process::Print_Image_Coordinate)
 	    .def("Check_Enum", py::overload_cast<Image_Process::Sample_Enum>(&Image_Process::Check_Enum))
-	    .def("Check_Enum", py::overload_cast<>(&Image_Process::Check_Enum, py::const_));
+	    .def("Check_Enum", py::overload_cast<>(&Image_Process::Check_Enum, py::const_))
+	    .def("Check_Image_File_Num", py::overload_cast<Image_Process::Input_Container &>(&Image_Process::Check_Image_File_Num))
+	    .def("Check_Image_File_Num", py::overload_cast<>(&Image_Process::Check_Image_File_Num));
 
 	py::enum_<Image_Process::Sample_Enum>(Image_Process, "Sample_Enum")
 	    .value("A_0", Image_Process::Sample_Enum::A_0)
 	    .value("A_1", Image_Process::Sample_Enum::A_1)
 	    .value("A_2", Image_Process::Sample_Enum::A_2)
 	    .export_values();
+
+	py::class_<Image_Process::Input_Container> Input_Container (m, "Input_Container", py::buffer_protocol());
+	Input_Container.def(py::init<>())
+	    .def_property("image_file_num", [](Image_Process::Input_Container &self) {return self.image_file_num;},
+	                                    [](Image_Process::Input_Container &self,
+	                                    std::vector<uint32_t>buffer) {self.image_file_num = buffer;});
 
 	Pybind_Image_Base<std::string, int>(m, "std::string", "int");
 }
