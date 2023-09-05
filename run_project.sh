@@ -6,7 +6,7 @@ cd ../bin/
 ./pybind_cpp_exec
 
 cd ..
-cp lib/*.so example/py/
+cp lib/*cpython*.so example/py/
 
 cd example/py/
 $(which python) main.py
