@@ -31,3 +31,4 @@ jobs:
           cp lib/*.so example/py/
           cd example/py/
           python3 main.py
+          uname -a
