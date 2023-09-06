@@ -10,3 +10,5 @@ cp lib/*cpython*.so example/py/
 
 cd example/py/
 $(which python) main.py
+
+uname -a
