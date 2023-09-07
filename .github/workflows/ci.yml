@@ -42,6 +42,7 @@ jobs:
           example/py/main.py
 
   deliver:
+    needs: build_pybind11_project  # Make "deliver" job depend on "build_pybind11_project" job
     runs-on: ubuntu-latest
 
     steps:
