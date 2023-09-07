@@ -32,3 +32,28 @@ jobs:
           cd example/py/
           python3 main.py
           uname -a
+
+  deliver:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Archive Files
+      uses: actions/upload-artifact@v2
+      with:
+        name: deliverables
+        path: |
+          lib/*.so
+          example/py/main.py
+
+    - name: Download Deliverables
+      uses: actions/download-artifact@v2
+      with:
+        name: deliverables
+        path: deliverables
+
+    - name: List Deliverables
+      run: |
+        ls -la deliverables
