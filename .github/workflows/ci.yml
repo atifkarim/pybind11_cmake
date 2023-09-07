@@ -32,7 +32,7 @@ jobs:
           cd example/py/
           python3 main.py
           uname -a
-          ls lib/
+          ls
 
   deliver:
     runs-on: ubuntu-latest
