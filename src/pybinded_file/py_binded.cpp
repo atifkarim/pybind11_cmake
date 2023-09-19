@@ -1,11 +1,13 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/iostream.h>
-#include "child.hpp"
+#include "header_list.hpp"
 #include <pybind11/numpy.h>
 #include <pybind11/stl.h>
 #include <pybind11/complex.h>
 
 namespace py = pybind11;
+
+void bind_test(py::module &m);
 
 template <typename T1 = std::string, typename T2 = int>
 void Pybind_Image_Base(py::module &m, const std::string& typestr1, const std::string& typestr2)
@@ -38,6 +40,8 @@ void Pybind_Image_Base(py::module &m, const std::string& typestr1, const std::st
 
 PYBIND11_MODULE(pybind_cpp_module, m)
 {
+    bind_test(m);
+
 	py::class_<Image_Core>(m, "Image_Core")
 	    .def(py::init<std::string>())
 	    .def("Image_Size", &Image_Core::Image_Size)

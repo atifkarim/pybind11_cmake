@@ -25,3 +25,6 @@ image_container_object = pybind_cpp_module.Input_Container()
 image_container_object.image_file_num = [2,5,8,7]
 image_process_obj.Check_Image_File_Num(image_container_object)
 print("Res: ", image_process_obj.Check_Image_File_Num())
+
+
+pybind_cpp_module.print_msg("Hello py")
