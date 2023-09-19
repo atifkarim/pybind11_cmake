@@ -1,4 +1,4 @@
-site_name: Image Processor
+site_name: C++ Datatypes <--> Pybind11
 
 nav:
     - Overview:
