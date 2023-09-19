@@ -1,4 +1,4 @@
-#include "child.hpp"
+#include "header_list.hpp"
 
 int main()
 {
@@ -21,6 +21,11 @@ int main()
     input_container.image_file_num = {1,5,6,8};
     image_process.Check_Image_File_Num(input_container);
     std::cout << "Res: " << image_process.Check_Image_File_Num() << std::endl;
+
+    {
+        // This namespace will print from test.hpp
+        print_msg("Hello Developer !!!");
+    }
 
     return 0;
 }
