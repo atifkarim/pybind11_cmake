@@ -9,11 +9,16 @@ project(pybind11_cmake)
 
 set(MAIN_TARGET_NAME ${PROJECT_NAME})
 
+# collect all source file (function definition files)
+set(CPP_SOURCES
+           ${${PROJECT_NAME}_SOURCE_DIR}/src/base.cpp
+           ${${PROJECT_NAME}_SOURCE_DIR}/src/child.cpp
+           ${${PROJECT_NAME}_SOURCE_DIR}/src/test.cpp
+           ${${PROJECT_NAME}_SOURCE_DIR}/src/reference.cpp
+)
+
 # C++ shared library
-add_library(${MAIN_TARGET_NAME}_lib SHARED ${${PROJECT_NAME}_SOURCE_DIR}/src/base.cpp
-                                           ${${PROJECT_NAME}_SOURCE_DIR}/src/child.cpp
-                                           ${${PROJECT_NAME}_SOURCE_DIR}/src/test.cpp
-                                           )
+add_library(${MAIN_TARGET_NAME}_lib SHARED ${CPP_SOURCES})
 
 # Targetted directory for the target ${MAIN_TARGET_NAME}_lib
 target_include_directories(${MAIN_TARGET_NAME}_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
@@ -41,13 +46,15 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../forked_repo/pybind11 ${CMAKE_CUR
 # Pybind target name. This is also written/used in src/py_binded.cpp file. Same name should be kept
 set(PYBIND_TARGET_NAME pybind_cpp_module)
 
+# collect all source file (function definition files) where pybind11 is used
+set(PYBIND11_SOURCES
+           ${PROJECT_SOURCE_DIR}/src/pybinded_file/bind_test.cpp
+           ${PROJECT_SOURCE_DIR}/src/pybinded_file/bind_reference.cpp
+           ${PROJECT_SOURCE_DIR}/src/pybinded_file/py_binded.cpp
+)
+
 # Source file to bind pybind11
-pybind11_add_module(${PYBIND_TARGET_NAME} ${PROJECT_SOURCE_DIR}/src/base.cpp
-                                          ${PROJECT_SOURCE_DIR}/src/child.cpp
-                                          ${${PROJECT_NAME}_SOURCE_DIR}/src/test.cpp
-                                          ${PROJECT_SOURCE_DIR}/src/pybinded_file/bind_test.cpp
-                                          ${PROJECT_SOURCE_DIR}/src/pybinded_file/py_binded.cpp
-                                          )
+pybind11_add_module(${PYBIND_TARGET_NAME} ${CPP_SOURCES} ${PYBIND11_SOURCES})
 
 # Target directory for pybinded module
 target_include_directories(${PYBIND_TARGET_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
