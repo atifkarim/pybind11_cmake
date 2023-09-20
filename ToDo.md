@@ -28,3 +28,7 @@ This repository will be a collection of multiple learning fields where my desire
 ## Docker
 
 1. See [this](https://hub.docker.com/repository/docker/atifkarim/pybind11_cmake) to use the docker image.
+
+## Bind C++ datatype
+
+Current goal is to collect different c++ datatype and try to expose them in python using pybind11
