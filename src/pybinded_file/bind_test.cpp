@@ -9,4 +9,5 @@ namespace py = pybind11;
 
 void bind_test(py::module &m) {
     m.def("print_msg", &print_msg);
+    m.def("add", &add);
 }

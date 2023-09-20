@@ -6,3 +6,4 @@
 #include <string>
 
 void print_msg(std::string msg_);
+int add(int i, int j);

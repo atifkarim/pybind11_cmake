@@ -26,5 +26,13 @@ image_container_object.image_file_num = [2,5,8,7]
 image_process_obj.Check_Image_File_Num(image_container_object)
 print("Res: ", image_process_obj.Check_Image_File_Num())
 
-
+# This executes print_msg function from bind_test 
 pybind_cpp_module.print_msg("Hello py")
+
+# This executes increment_value function from bind_reference 
+s = 8
+t = -5
+s,t = pybind_cpp_module.increment_value(s,t)
+print("value s: ", s , " t: ",t)
+
+print("Result of add function", pybind_cpp_module.add(4,8))

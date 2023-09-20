@@ -25,6 +25,15 @@ int main()
     {
         // This namespace will print from test.hpp
         print_msg("Hello Developer !!!");
+        int res = add(8,9);
+        std::cout << "Res: " << res << std::endl;
+    }
+
+    {
+        // This namespace will increment value by reference
+        int x = 9; int y = -8;
+        increment_value(x,y);
+        std::cout << "After reference operation x: " << x << " y: " << y << std::endl;
     }
 
     return 0;
