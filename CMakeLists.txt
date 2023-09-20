@@ -15,6 +15,7 @@ set(CPP_SOURCES
            ${${PROJECT_NAME}_SOURCE_DIR}/src/child.cpp
            ${${PROJECT_NAME}_SOURCE_DIR}/src/test.cpp
            ${${PROJECT_NAME}_SOURCE_DIR}/src/reference.cpp
+           ${${PROJECT_NAME}_SOURCE_DIR}/src/pointer.cpp
 )
 
 # C++ shared library
@@ -50,6 +51,7 @@ set(PYBIND_TARGET_NAME pybind_cpp_module)
 set(PYBIND11_SOURCES
            ${PROJECT_SOURCE_DIR}/src/pybinded_file/bind_test.cpp
            ${PROJECT_SOURCE_DIR}/src/pybinded_file/bind_reference.cpp
+           ${PROJECT_SOURCE_DIR}/src/pybinded_file/bind_pointer.cpp
            ${PROJECT_SOURCE_DIR}/src/pybinded_file/py_binded.cpp
 )
 
