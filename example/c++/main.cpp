@@ -36,5 +36,17 @@ int main()
         std::cout << "After reference operation x: " << x << " y: " << y << std::endl;
     }
 
+    {
+        // This namespace will work for pointer.hpp
+        unsigned int p_arr[5] = {2,3,5,8,78};
+        modify_array(p_arr, 5);
+        std::cout << "Modifed array value : ";
+        for (auto &x : p_arr)
+        {
+            std::cout << x << " ";
+        }
+        std::cout << std::endl;
+    }
+
     return 0;
 }

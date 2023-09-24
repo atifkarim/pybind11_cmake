@@ -37,8 +37,4 @@ print("value s: ", s , " t: ",t)
 
 print("Result of add function", pybind_cpp_module.add(4,8))
 
-p_1 = 12
-p_2 = 23
-p_3 = 9
-p_1, p_2, p_3 = pybind_cpp_module.pointer_increment(p_1, p_2, p_3)
-print("p_1: ",p_1, " p_2: ",p_2, " p_3: ",p_3)
+from pointer import *

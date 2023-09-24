@@ -2,3 +2,4 @@
 /**/build
 /**/lib
 example/py/*.so
+/**/__pycache__
