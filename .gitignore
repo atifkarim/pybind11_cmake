@@ -4,4 +4,3 @@
 example/py/*.so
 /**/__pycache__
 ignore_folder
-# test
