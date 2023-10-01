@@ -46,6 +46,32 @@ int main()
             std::cout << x << " ";
         }
         std::cout << std::endl;
+
+        Color_Info color_info;
+        color_info.color_company_name = "Black";
+        color_info.color_number = 9;
+        unsigned int color_box_number_ = 9;
+        color_info.color_box_number = &color_box_number_;
+        std::cout << "color_info.color_box_number: " << *color_info.color_box_number << std::endl;
+        unsigned int color_code_ [] = {10,2,20,30,325};
+        color_info.color_code = color_code_;
+
+        int * color_ip_ = new int [color_info.color_number];
+        for(unsigned int i = 0; i < color_info.color_number; i++)
+            color_ip_[i] =  2 * i;
+        std::cout << "Color IP" << std::endl;
+        for(unsigned int i = 0; i < color_info.color_number; i++)
+            std::cout << *(color_ip_ + i) << " ";
+        std::cout << std::endl;
+        int * color_op_;
+        Color_Input(color_ip_, &color_op_, &color_info);
+
+        std::cout << "Resultant color_op_" << std::endl;
+        for(unsigned int i = 0; i < color_info.color_number; i++)
+            std::cout << *(color_op_ + i) << " ";
+        std::cout << std::endl;
+        std::cout << "Changed color_info.color_box_number: " << *color_info.color_box_number << std::endl;
+        std::cout << std::endl;
     }
 
     return 0;
