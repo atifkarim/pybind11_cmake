@@ -20,6 +20,26 @@ x_array = np.array(x_list, dtype=np.uint32)
 # Get the length of the array
 arr_len = len(x_list)
 
-# Call the C++ function with both arguments
+# Call the C++ function modify_array
 pybind_cpp_module.modify_array(x_array)
 print("Now array: ", x_array)
+
+# Call the C++ function Color_Input
+# It requires different arg to call than C++ function as py-binding 
+# has written differently
+
+color_info = pybind_cpp_module.Color_Info()
+color_info.color_company_name = "Blue"
+color_info.color_number = 9
+color_info.color_box_number = 1
+color_info.color_code = 2
+color_ip = []
+color_op = []
+ret = 0
+for i in range (9):
+    color_ip.append(2 * i)
+
+ret, color_op = pybind_cpp_module.Color_Input(color_ip, color_info)
+
+print("ret: ", ret)
+print("color_op: ", color_op)

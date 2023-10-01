@@ -36,8 +36,8 @@ int main()
         std::cout << "After reference operation x: " << x << " y: " << y << std::endl;
     }
 
+    // This namespace will work for pointer.hpp -> modify_array
     {
-        // This namespace will work for pointer.hpp
         unsigned int p_arr[5] = {2,3,5,8,78};
         modify_array(p_arr, 5);
         std::cout << "Modifed array value : ";
@@ -46,7 +46,10 @@ int main()
             std::cout << x << " ";
         }
         std::cout << std::endl;
+    }
 
+    // The following portion will work with pointer.hpp -> Color_Input
+    {
         Color_Info color_info;
         color_info.color_company_name = "Black";
         color_info.color_number = 9;
