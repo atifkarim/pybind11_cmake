@@ -9,4 +9,4 @@ cd ..
 cp lib/*cpython*.so example/py/
 
 cd example/py/
-$(which python) main.py
+# $(which python) main.py
