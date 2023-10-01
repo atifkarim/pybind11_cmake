@@ -43,3 +43,10 @@ ret, color_op = pybind_cpp_module.Color_Input(color_ip, color_info)
 
 print("ret: ", ret)
 print("color_op: ", color_op)
+
+# Call the C++ function Check_Struct
+child_obj = pybind_cpp_module.Child()
+child_obj.number = 8
+ret_obj = pybind_cpp_module.Check_Struct(child_obj)
+print("Age in py: ", ret_obj.age)
+print("NUmber in py: ", ret_obj.number)

@@ -34,4 +34,17 @@ int Color_Input(int * color_ip,
                 Color_Info * color_info);
 
 
+struct Child{
+    int age;
+    int *number;
+};
+
+void m.def("increment_value",
+      [](int x, int y)
+      {
+          increment_value(x, y);
+          return std::make_tuple(x, y);
+      });(Child * obj);
+
+
 // #endif // POINTER_H_

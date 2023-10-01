@@ -47,3 +47,9 @@ int Color_Input(int * color_ip,
     *(color_info->color_box_number) = 8;
     return 1;
 }
+
+void Check_Struct(Child * obj)
+{
+    obj->age = 12;
+    *(obj->number) = 123;
+}

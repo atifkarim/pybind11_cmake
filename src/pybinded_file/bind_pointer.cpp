@@ -99,5 +99,16 @@ void bind_pointer(py::module &m) {
 	    }, "Color_Input function");
 
 
+	// Bind struct Child
+    // py::class_<Child> Child (m, "Child");
+    // Child
+	//     .def(py::init<>())
+    //     .def_readwrite("age", &Child::age)
+    //     .def_readwrite("number", &Child::number);
+
+	// // Bind function Check_Struct
+	// m.def("Check_Struct", &Check_Struct);
+
+
 
 }

@@ -77,5 +77,16 @@ int main()
         std::cout << std::endl;
     }
 
+    // The following portion will work with pointer.hpp -> Check_Struct
+    {
+        Child obj;
+        int number_ = 456;
+        obj.number = &number_;
+        std::cout << "before function calling number: " << *(obj.number) << std::endl;
+        Check_Struct(&obj);
+        std::cout << "age: " << obj.age << std::endl;
+        std::cout << "number: " << *(obj.number) << std::endl;
+    }
+
     return 0;
 }
