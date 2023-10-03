@@ -43,10 +43,19 @@ ret, color_op = pybind_cpp_module.Color_Input(color_ip, color_info)
 
 print("ret: ", ret)
 print("color_op: ", color_op)
+print("Changed color box number: ",color_info.color_box_number)
 
 # Call the C++ function Check_Struct
 child_obj = pybind_cpp_module.Child()
-child_obj.number = 8
+child_obj.number = [58]
+print("before function child_obj.number: ", child_obj.number)
 ret_obj = pybind_cpp_module.Check_Struct(child_obj)
-print("Age in py: ", ret_obj.age)
-print("NUmber in py: ", ret_obj.number)
+print("Age in py: ", ret_obj[0].age)
+print("Number in py: ", ret_obj[0].number)
+print("after function child_obj.number: ", child_obj.number)
+
+# modified_child_obj = pybind_cpp_module.Check_Struct(child_obj)
+
+# # Access and print 'age' and 'number' from the modified object
+# print("Age in py:", modified_child_obj.age)
+# print("Number in py:", modified_child_obj.number)

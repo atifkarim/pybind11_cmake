@@ -39,12 +39,7 @@ struct Child{
     int *number;
 };
 
-void m.def("increment_value",
-      [](int x, int y)
-      {
-          increment_value(x, y);
-          return std::make_tuple(x, y);
-      });(Child * obj);
+void Check_Struct(Child * obj);
 
 
 // #endif // POINTER_H_

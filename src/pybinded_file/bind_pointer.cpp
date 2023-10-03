@@ -100,14 +100,24 @@ void bind_pointer(py::module &m) {
 
 
 	// Bind struct Child
-    // py::class_<Child> Child (m, "Child");
-    // Child
-	//     .def(py::init<>())
-    //     .def_readwrite("age", &Child::age)
-    //     .def_readwrite("number", &Child::number);
+    py::class_<Child> Child (m, "Child");
+    Child
+	    .def(py::init<>())
+        .def_readwrite("age", &Child::age)
+	    .def_property("number",
+	                  [](::Child &self) { return self.number; },
+	                  [](::Child &m, py::array_t<int> buffer) {
+	                      py::buffer_info info = buffer.request();
+                          m.number = static_cast<int *>(info.ptr);
+	                  });
 
-	// // Bind function Check_Struct
-	// m.def("Check_Struct", &Check_Struct);
+	// Bind function Check_Struct
+	m.def("Check_Struct",
+      [](::Child& obj)
+      {
+          Check_Struct(&obj);
+          return std::make_tuple(obj);
+      });
 
 
 
