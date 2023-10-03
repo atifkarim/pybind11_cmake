@@ -54,9 +54,3 @@ print("before function child_obj.age: ", child_obj.age)
 pybind_cpp_module.Check_Struct(child_obj)
 print("after function child_obj.number: ", child_obj.number)
 print("after function child_obj.age: ", child_obj.age)
-
-# modified_child_obj = pybind_cpp_module.Check_Struct(child_obj)
-
-# # Access and print 'age' and 'number' from the modified object
-# print("Age in py:", modified_child_obj.age)
-# print("Number in py:", modified_child_obj.number)
