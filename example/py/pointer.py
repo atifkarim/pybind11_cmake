@@ -49,9 +49,7 @@ print("Changed color box number: ",color_info.color_box_number)
 child_obj = pybind_cpp_module.Child()
 child_obj.number = [58]
 print("before function child_obj.number: ", child_obj.number)
-ret_obj = pybind_cpp_module.Check_Struct(child_obj)
-print("Age in py: ", ret_obj[0].age)
-print("Number in py: ", ret_obj[0].number)
+pybind_cpp_module.Check_Struct(child_obj)
 print("after function child_obj.number: ", child_obj.number)
 
 # modified_child_obj = pybind_cpp_module.Check_Struct(child_obj)

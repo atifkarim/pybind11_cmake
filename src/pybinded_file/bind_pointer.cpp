@@ -112,12 +112,13 @@ void bind_pointer(py::module &m) {
 	                  });
 
 	// Bind function Check_Struct
-	m.def("Check_Struct",
-      [](::Child& obj)
-      {
-          Check_Struct(&obj);
-          return std::make_tuple(obj);
-      });
+	// m.def("Check_Struct",
+    //   [](::Child& obj)
+    //   {
+    //       Check_Struct(&obj);
+    //       return std::make_tuple(obj);
+    //   });
+    m.def("Check_Struct", &Check_Struct);
 
 
 
