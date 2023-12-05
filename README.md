@@ -27,6 +27,7 @@ The goal of this repository to work with pybind11 and CMake. Here, my plan is to
     └── pybind11
     pybind11_cmake/
     ```
+- To clone and prepare the repository by following current structure one can use [this script](https://github.com/atifkarim/pybind11_cmake/blob/main/prepare_project.sh)
 
 # Building project
 
