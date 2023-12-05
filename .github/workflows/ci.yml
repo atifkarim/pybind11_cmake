@@ -41,7 +41,6 @@ jobs:
           lib/*.so
           example/py/main.py
           example/py/pointer.py
-          cp lib/*cpython* example/py/
 
   deliver:
     needs: build_pybind11_project  # Make "deliver" job depend on "build_pybind11_project" job
@@ -56,10 +55,6 @@ jobs:
       with:
         name: deliverables
         path: deliverables
-    
-    - name: Copy cpython lib to python directory
-      run: |
-        cp deliverables/lib/*cpython* deliverables/example/py/
     
     - name: Build Docker Image and Push to Docker Hub
       run: |
