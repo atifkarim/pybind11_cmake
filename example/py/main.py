@@ -1,5 +1,8 @@
 print("-"*10, " Python program is executing ", "-"*10)
 
+import sys, os
+sys.path.append("../../lib")
+
 import pybind_cpp_module
 
 image_core_obj = pybind_cpp_module.Image_Core("Penguin")
