@@ -40,6 +40,8 @@ jobs:
         path: |
           lib/*.so
           example/py/main.py
+          example/py/pointer.py
+          cp lib/*cpython* example/py/
 
   deliver:
     needs: build_pybind11_project  # Make "deliver" job depend on "build_pybind11_project" job
