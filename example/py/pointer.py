@@ -31,7 +31,7 @@ print("Now array: ", x_array)
 color_info = pybind_cpp_module.Color_Info()
 color_info.color_company_name = "Blue"
 color_info.color_number = 9
-color_info.color_box_number = 1
+color_info.color_box_number = [1]
 color_info.color_code = 2
 color_ip = []
 color_op = []
@@ -43,7 +43,7 @@ ret, color_op = pybind_cpp_module.Color_Input(color_ip, color_info)
 
 print("ret: ", ret)
 print("color_op: ", color_op)
-print("Changed color box number: ",color_info.color_box_number)
+print("Changed color_info.color_box_number: ",color_info.color_box_number)
 
 # Call the C++ function Check_Struct
 child_obj = pybind_cpp_module.Child()

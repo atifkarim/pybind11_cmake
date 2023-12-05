@@ -44,7 +44,12 @@ void bind_pointer(py::module &m) {
 	                      std::strcpy(const_cast<char *>(m.color_company_name), py_name.c_str());
 	                  })
 	    .def_readwrite("color_number", &Color_Info::color_number)
-        .def_readwrite("color_box_number", &Color_Info::color_box_number)
+	    .def_property("color_box_number",
+	                  [](::Color_Info &self) { return self.color_box_number; },
+	                  [](::Color_Info &m, py::array_t<unsigned int> buffer) {
+	                      py::buffer_info info = buffer.request();
+                          m.color_box_number = static_cast<unsigned int *>(info.ptr);
+	                  })
         .def_readwrite("color_code", &Color_Info::color_code)
 	    // .def_property("color_box_number", [](::Color_Info &self) {return self.color_box_number;},
 	    //                            [](::Color_Info &m, py::array_t<unsigned int> buffer){
