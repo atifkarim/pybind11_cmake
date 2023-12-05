@@ -60,7 +60,9 @@ PYBIND11_MODULE(pybind_cpp_module, m)
 	    .def("Image_Coordinate", [](class Image_Process &m, py::array_t<uint32_t> buffer){
 	                                py::buffer_info info = buffer.request();
 	                                m.Image_Coordinate(static_cast<uint32_t *>(info.ptr));})
-	    .def("Print_Image_Coordinate", &Image_Process::Print_Image_Coordinate)
+	    .def("Print_Image_Coordinate", &Image_Process::Print_Image_Coordinate,
+		                               py::call_guard<py::scoped_ostream_redirect,
+		                               py::scoped_estream_redirect>())
 	    .def("Check_Enum", py::overload_cast<Image_Process::Sample_Enum>(&Image_Process::Check_Enum))
 	    .def("Check_Enum", py::overload_cast<>(&Image_Process::Check_Enum, py::const_))
 	    .def("Check_Image_File_Num", py::overload_cast<Image_Process::Input_Container &>(&Image_Process::Check_Image_File_Num))
