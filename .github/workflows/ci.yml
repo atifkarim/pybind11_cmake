@@ -56,6 +56,12 @@ jobs:
       with:
         name: deliverables
         path: deliverables
+    
+    - name: Copy cpython lib to python directory
+      run: |
+        mkdir -p deliverables/example/py
+        cp -r deliverables/lib/*cpython* deliverables/example/py/
+    
     - name: Build Docker Image and Push to Docker Hub
       run: |
           docker build -t atifkarim/test_image_pybind11_cmake:latest .
