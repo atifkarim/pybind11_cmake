@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ~
-
+mkdir pybind11_cmake_docker && cd pybind11_cmake_docker
 # Cloning required repository
 git clone https://github.com/atifkarim/pybind11_cmake.git
 git clone https://github.com/pybind/pybind11.git forked_repo/pybind11
