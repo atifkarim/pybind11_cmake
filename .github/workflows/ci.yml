@@ -28,7 +28,6 @@ jobs:
           cd bin
           ./pybind_cpp_exec
           cd ..
-          cp lib/*.so example/py/
           cd example/py/
           python3 main.py
           uname -a
