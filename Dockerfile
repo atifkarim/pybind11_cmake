@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.8
+FROM python:3.10
 
 # Script file where necessary commands are written to build and run the project
 COPY prepare_project.sh /
