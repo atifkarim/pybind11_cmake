@@ -19,6 +19,9 @@ cd ../bin/
 
 # Copying library file to python file's directory
 cd ..
+pip install pipreqs
+pipreqs example/py
+pip install -r requirements.txt
 cp lib/*.so example/py/
 
 # Execute python script
