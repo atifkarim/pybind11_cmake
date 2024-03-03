@@ -2,6 +2,7 @@
 
 int main()
 {
+    std::cout << "C++ code is executing" << std::endl;
     Image_Core image_base("Panda");
     image_base.Image_Size(25);
     image_base.Print_Status();

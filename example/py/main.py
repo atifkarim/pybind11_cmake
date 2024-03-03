@@ -1,4 +1,4 @@
-print("-"*10, " Python program is executing ", "-"*10)
+print("\n\n-"*10, " Python program is executing ", "-"*10)
 
 import sys, os
 sys.path.append("../../lib")
