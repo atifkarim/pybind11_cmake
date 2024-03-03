@@ -50,6 +50,29 @@ This [RTD Site](https://pybind11-cmake.readthedocs.io/en/latest/) is used to hos
 
 This project is available in Docker. See [this](https://hub.docker.com/r/atifkarim/test_image_pybind11_cmake) to use the docker image.
 
+## Command tom run docker image
+
+- After preparing docker environment in your system, pull the docker image
+  ```sh
+  docker pull atifkarim/test_image_pybind11_cmake
+  ```
+- After pulling check images list by `docker images` command
+- Now, run it using the following command
+      
+  - Without interactive terminal
+    ```sh
+    docker run atifkarim/test_image_pybind11_cmake
+    ```
+  - Without interactive terminal
+    ```sh
+    docker run -it atifkarim/test_image_pybind11_cmake bash
+    ```
+      - Now, here you can see the file `prepare_project.sh`.
+      - Make it executable by running `chmod +x prepare_project.sh`
+      - Now run that file by using `./prepare_project.sh`.
+      - This command will clone required repo and execute cpp, py file. Later, developer can do further development here.
+      - I have found the required repo by going to home directory `cd ~`
+
 
 # Planning
 
