@@ -48,7 +48,7 @@ This [RTD Site](https://pybind11-cmake.readthedocs.io/en/latest/) is used to hos
 
 # Containerization
 
-This project is available in Docker. See [this](https://hub.docker.com/r/atifkarim/pybind11_cmake) to use the docker image.
+This project is available in Docker. See [this](https://hub.docker.com/r/atifkarim/test_image_pybind11_cmake) to use the docker image.
 
 
 # Planning
