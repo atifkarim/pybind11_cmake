@@ -25,9 +25,6 @@ This repository will be a collection of multiple learning fields where my desire
 
 # Delivery
 
-## Docker
-
-1. See [this](https://hub.docker.com/repository/docker/atifkarim/pybind11_cmake) to use the docker image.
 
 ## Bind C++ datatype
 

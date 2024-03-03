@@ -46,6 +46,11 @@ To build the project necessary commands are written in `run_project.sh` file whi
 
 This [RTD Site](https://pybind11-cmake.readthedocs.io/en/latest/) is used to host the documentation of the project
 
+# Containerization
+
+This project is available in Docker. See [this](https://hub.docker.com/r/atifkarim/pybind11_cmake) to use the docker image.
+
+
 # Planning
 
 [Here](ToDo.md) my planning is written regarding the project
