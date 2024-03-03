@@ -18,6 +18,7 @@ cd ../bin/
 ./pybind_cpp_exec
 
 # Copying library file to python file's directory
+# Here, pipreqs module creates the requirements.txt file by reading the py file
 cd ..
 pip install pipreqs
 rm example/py/requirements.txt
