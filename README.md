@@ -5,28 +5,28 @@ C++ Datatypes <--> Pybind11
 [![Documentation Status](https://readthedocs.org/projects/pybind11-cmake/badge/?version=latest)](https://pybind11-cmake.readthedocs.io/en/latest/?badge=latest)
 
 
-The goal of this repository to work with pybind11 and CMake. Here, my plan is to introduce binding of different C++ datatypes. To build the project `CMake` is used. 
+THe goal if this project is to interface C++ type with Python. Pybind11 is used for this interfacing feature. CMaek is used as build tool.
 
 # Required Repositories
 
 - This project is dependent on [`pybind11`](https://github.com/pybind/pybind11/tree/master) which is used in this project as a helper repository.
 - To clone and use pybind11 follow the following approach.
     - Go to the directory where [`pybind11_cmake`](https://github.com/atifkarim/pybind11_cmake) project will be cloned and clone it with the following command
-    ```sh
-    git clone https://github.com/atifkarim/pybind11_cmake.git
-    ```
+      ```sh
+      git clone https://github.com/atifkarim/pybind11_cmake.git
+      ```
 
     - Now keep  [`pybind11`](https://github.com/pybind/pybind11/tree/master) in the same level of the current project. I have kept it in a common repository named `forked repo`
-    ```sh
-    mkdir forked_repo && cd forked_repo
-    git clone https://github.com/pybind/pybind11.git
-    ```
+      ```sh
+      mkdir forked_repo && cd forked_repo
+      git clone https://github.com/pybind/pybind11.git
+      ```
     - Finally the directory structure will be as like as follows
-    ```sh
-    forked_repo/
-    └── pybind11
-    pybind11_cmake/
-    ```
+      ```sh
+      forked_repo/
+      └── pybind11
+      pybind11_cmake/
+      ```
 - To clone and prepare the repository by following current structure one can use [this script](https://github.com/atifkarim/pybind11_cmake/blob/main/prepare_project.sh)
 
 # Required python package
@@ -50,7 +50,7 @@ This [RTD Site](https://pybind11-cmake.readthedocs.io/en/latest/) is used to hos
 
 This project is available in Docker. See [this](https://hub.docker.com/r/atifkarim/test_image_pybind11_cmake) to use the docker image.
 
-## Command tom run docker image
+## Command to run docker image
 
 - After preparing docker environment in your system, pull the docker image
   ```sh
